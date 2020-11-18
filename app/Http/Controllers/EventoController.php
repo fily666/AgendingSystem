@@ -14,7 +14,10 @@ class EventoController extends Controller
      */
     public function index()
     {
-        //
+        $eventos = evento::latest()->paginate(5);
+  
+        return view('eventos.index',compact('eventos'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +27,7 @@ class EventoController extends Controller
      */
     public function create()
     {
-        //
+        return view('eventos.create');
     }
 
     /**
@@ -35,7 +38,15 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'detail' => 'required',
+        ]);
+  
+        evento::create($request->all());
+   
+        return redirect()->route('eventos.index')
+                        ->with('success','Product created successfully.');
     }
 
     /**
@@ -46,7 +57,7 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        //
+        return view('eventos.show',compact('evento'));
     }
 
     /**
@@ -57,7 +68,7 @@ class EventoController extends Controller
      */
     public function edit(Evento $evento)
     {
-        //
+        return view('eventos.edit',compact('evento'));
     }
 
     /**
@@ -69,7 +80,15 @@ class EventoController extends Controller
      */
     public function update(Request $request, Evento $evento)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'detail' => 'required',
+        ]);
+  
+        $evento->update($request->all());
+  
+        return redirect()->route('eventos.index')
+                        ->with('success','Product updated successfully');
     }
 
     /**
@@ -80,6 +99,10 @@ class EventoController extends Controller
      */
     public function destroy(Evento $evento)
     {
-        //
+        $evento->delete();
+  
+        return redirect()->route('eventos.index')
+                        ->with('success','Product deleted successfully');
     }
 }
+
