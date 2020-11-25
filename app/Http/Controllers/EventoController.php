@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Evento;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
+
 class EventoController extends Controller
 {
     /**
@@ -15,8 +18,8 @@ class EventoController extends Controller
     public function index()
     {
         $eventos = evento::latest()->paginate(5);
-  
-        return view('eventos.index',compact('eventos'))
+
+        return view('eventos.index', compact('eventos'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -38,15 +41,21 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
-        ]);
-  
-        evento::create($request->all());
-   
+        #evento::create($request->all());
+
+        $Eventos = new Evento();
+
+        $imgeneslogo = $request->file('logo')->store('public/img');
+        $logo = Storage::url($imgeneslogo);
+
+        $Eventos->name = $request->name;
+        $Eventos->detail = $request->detail;
+        $Eventos->logo = $logo;
+        $Eventos->save();
+
+
         return redirect()->route('eventos.index')
-                        ->with('success','Product created successfully.');
+            ->with('success', 'Product created successfully.');
     }
 
     /**
@@ -57,7 +66,7 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        return view('eventos.show',compact('evento'));
+        return view('eventos.show', compact('evento'));
     }
 
     /**
@@ -68,7 +77,7 @@ class EventoController extends Controller
      */
     public function edit(Evento $evento)
     {
-        return view('eventos.edit',compact('evento'));
+        return view('eventos.edit', compact('evento'));
     }
 
     /**
@@ -78,17 +87,24 @@ class EventoController extends Controller
      * @param  \App\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Evento $evento)
+    public function update(Request $request, Evento $Eventos)
     {
-        $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
-        ]);
-  
-        $evento->update($request->all());
-  
+
+        $Eventos->update();
+
+        $imgeneslogo = $request->file('logo')->store('public/img');
+        $logo = Storage::url($imgeneslogo);
+
+        #$evento->update($request->all());
+
+        $Eventos->name = $request->name;
+        $Eventos->detail = $request->detail;
+        $Eventos->logo = $logo;
+        $Eventos->save();
+
+
         return redirect()->route('eventos.index')
-                        ->with('success','Product updated successfully');
+            ->with('success', 'Product created successfully.');
     }
 
     /**
@@ -100,9 +116,8 @@ class EventoController extends Controller
     public function destroy(Evento $evento)
     {
         $evento->delete();
-  
+
         return redirect()->route('eventos.index')
-                        ->with('success','Product deleted successfully');
+            ->with('success', 'Product deleted successfully');
     }
 }
-

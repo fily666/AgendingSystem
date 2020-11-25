@@ -16,6 +16,7 @@ class CreateEventosTable extends Migration
         Schema::create('eventos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('logo');
             $table->text('detail');
             $table->timestamps();;
         });
