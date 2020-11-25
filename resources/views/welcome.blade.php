@@ -35,10 +35,12 @@
         }
 
         .jumbotron {
-            background-color: #f4511e;
-            color: #fff;
-            padding: 100px 25px;
-            font-family: Montserrat, sans-serif;
+            background-position: center;
+            background-size: cover;
+            background-image: url("https://static.iris.net.co/dinero/upload/images/2016/9/30/232523_1.jpg");
+            padding: 250px;
+            margin-bottom: 0px;
+            color: white;
         }
 
         .container-fluid {
@@ -243,7 +245,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#myPage">Logo</a>
+                <a class="navbar-brand" href="#myPage">HOME</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -251,24 +253,22 @@
                     <li><a href="#pricing">Eventos</a></li>
 
                     @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                        @else
-                        <a href="{{ route('login') }}">Login</a>
+                    @auth
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    @else
+                    <li><a href="{{ route('login') }}">Login</a> </li>
 
-                        @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                        @endif
-                        @endauth
-                    </div>
+                    @if (Route::has('register'))
+                    <li><a href="{{ route('register') }}">Register</a> </li>
+                    @endif
+                    @endauth
                     @endif
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center" style="color: #f4511e;">
         <h1>Company</h1>
         <p>We specialize in blablabla</p>
     </div>
@@ -280,6 +280,7 @@
             <h4>Choose a payment plan that works for you</h4>
         </div>
         <div class="row slideanim">
+            @foreach ($eventos as $evento)
             <div class="col-sm-12 col-xs-12">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
@@ -288,12 +289,11 @@
                     <div class="panel-body">
                         <div class="col-sm-4">
                             <br>
-                            ggggg gggggggggg ggggggggggggg gggggggggggg ggggggggg hhhhhhhhhhhhhhhhhhhh uuuuuuuuuuuuuuuuuuu i
+                            <img src="{{ $evento->logo }}" width="100%">
                         </div>
                         <div class="col-sm-8">
-                            <h3>Eventos</h3>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
+                            <h3>{{ $evento ->name }}</h3>
+                            {{ $evento ->detail }}
                             <div class="panel-footer">
                                 <button class="btn btn-lg">PARTICIPA</button>
                             </div>
@@ -301,6 +301,8 @@
                     </div>
                 </div>
             </div>
+            @endforeach
+            {!! $eventos->links() !!}
         </div>
     </div>
 
