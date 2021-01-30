@@ -269,7 +269,7 @@
     </nav>
 
     <div class="jumbotron text-center" style="color: #f4511e;">
-        <h1>Company</h1>
+        <h1>Agending Sistem</h1>
         <p>We specialize in blablabla</p>
     </div>
 
@@ -277,14 +277,14 @@
     <div id="pricing" class="container-fluid">
         <div class="text-center">
             <h2>Eventos</h2>
-            <h4>Choose a payment plan that works for you</h4>
+         <!--   <h4>Choose a payment plan that works for you</h4> -->
         </div>
         <div class="row slideanim">
             @foreach ($eventos as $evento)
             <div class="col-sm-12 col-xs-12">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <h1>Basic</h1>
+                       <!-- <h1>Basic</h1> -->
                     </div>
                     <div class="panel-body">
                         <div class="col-sm-4">

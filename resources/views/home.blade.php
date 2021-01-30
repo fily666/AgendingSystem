@@ -4,8 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+
+        <br>
+<br>
+<br>
+<br>
+<br>
             <div class="card">
-                <div class="card-header">Dashboard</div>
+
+                <img src="https://erikajimenez.com/wp-content/uploads/2018/01/welcome-754x321.png" width="100%">
+
+                <!-- <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +24,7 @@
                     @endif
 
                     You are logged in!
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
