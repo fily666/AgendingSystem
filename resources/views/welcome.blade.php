@@ -295,6 +295,13 @@
                             <h3>{{ $evento ->name }}</h3>
                             {{ $evento ->detail }}
                             <div class="panel-footer">
+                            <h4>Detalles del evento</h4>
+                            {{ $evento ->fechainicial }}  - del -
+                            {{ $evento ->fechafinal }} -- 
+                            {{ $evento ->horainicial }} - de -
+                            {{ $evento ->horafinal }}
+                            </div>
+                            <div class="panel-footer"   >
                                 <button class="btn btn-lg">PARTICIPA</button>
                             </div>
                         </div>

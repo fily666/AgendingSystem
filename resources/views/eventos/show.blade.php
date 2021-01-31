@@ -14,8 +14,8 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Name:</strong>
-            {{ $evento->name }}
+            <strong>Nombre del evento:</:< /strong>
+                {{ $evento->name }}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -23,7 +23,36 @@
             <strong>Imagen:</strong>
             {{ $evento->logo }}
             <img src="{{ $evento->logo }}" width="20%">
-
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Fecha inicio del evento::</strong>
+            {{ $evento->fechainicial }}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Fecha fin del evento::</strong>
+            {{ $evento->fechafinal }}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Hora inicio del evento::</strong>
+            {{ $evento->horainicial }}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Hora fin del evento::</strong>
+            {{ $evento->horafinal }}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Duracion estimada por encuentro en munitos:</strong>
+            {{ $evento->duracion }}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">

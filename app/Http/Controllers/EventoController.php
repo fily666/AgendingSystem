@@ -49,13 +49,17 @@ class EventoController extends Controller
         $logo = Storage::url($imgeneslogo);
 
         $Eventos->name = $request->name;
-        $Eventos->detail = $request->detail;
         $Eventos->logo = $logo;
+        $Eventos->fechainicial = $request->fechainicial;
+        $Eventos->fechafinal = $request->fechafinal;
+        $Eventos->horainicial = $request->horainicial;
+        $Eventos->horafinal = $request->horafinal;
+        $Eventos->duracion = $request->duracion;
+        $Eventos->detail = $request->detail;
         $Eventos->save();
 
-
         return redirect()->route('eventos.index')
-            ->with('success', 'Product created successfully.');
+            ->with('success', 'Evento creado con éxito.');
     }
 
     /**
@@ -87,24 +91,27 @@ class EventoController extends Controller
      * @param  \App\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Evento $Eventos)
+    public function update(Request $request, Evento $evento)
     {
-
-        $Eventos->update();
-
-        $imgeneslogo = $request->file('logo')->store('public/img');
-        $logo = Storage::url($imgeneslogo);
-
         #$evento->update($request->all());
+        
+        $evento->update();
+        
+        $imgeneslogo = $request->file('logo')->store('public/img');
+        $logo = Storage::url($imgeneslogo);   
 
-        $Eventos->name = $request->name;
-        $Eventos->detail = $request->detail;
-        $Eventos->logo = $logo;
-        $Eventos->save();
-
+        $evento->name = $request->name;
+        $evento->logo = $logo;
+        $evento->fechainicial = $request->fechainicial;
+        $evento->fechafinal = $request->fechafinal;
+        $evento->horainicial = $request->horainicial;
+        $evento->horafinal = $request->horafinal;
+        $evento->duracion = $request->duracion;
+        $evento->detail = $request->detail;
+        $evento->save();
 
         return redirect()->route('eventos.index')
-            ->with('success', 'Product created successfully.');
+            ->with('success', 'Evento Editado con éxito.');
     }
 
     /**
@@ -118,6 +125,6 @@ class EventoController extends Controller
         $evento->delete();
 
         return redirect()->route('eventos.index')
-            ->with('success', 'Product deleted successfully');
+            ->with('success', 'Evento Eliminado con éxito.');
     }
 }
