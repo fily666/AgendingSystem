@@ -29,4 +29,5 @@ Route::resource('eventos','EventoController');
 
 Route::resource('usuarios', 'UserController');
 
+Route::resource('empresas', 'EmpresaController');
 

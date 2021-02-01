@@ -73,6 +73,7 @@
         <div class="w3-bar-block">
             <a href="{{ url('/home') }}" class="w3-bar-item w3-button w3-hover-white">Home</a>
             <a href="{{ route('eventos.index') }}" class="w3-bar-item w3-button w3-hover-white">Eventos</a>
+            <a href="{{ route('empresas.index') }}" class="w3-bar-item w3-button w3-hover-white">Empresas</a>
             <a href="#contact" class="w3-bar-item w3-button w3-hover-white">citas</a>
             <a href="{{ route('usuarios.index') }}" class="w3-bar-item w3-button w3-hover-white">Usuarios </a>
 
