@@ -19,7 +19,7 @@
     <table class="w3-table-all w3-card-4">
         <tr>
             <th>Id</th>
-            <th>Name</th>
+            <th>Nombre</th>
             <th>Email</th>
             <th>Fecha</th>
             <th>Acciónes</th>

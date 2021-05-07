@@ -270,21 +270,21 @@
 
     <div class="jumbotron text-center" style="color: #f4511e;">
         <h1>Agending Sistem</h1>
-        <p>We specialize in blablabla</p>
+        <p>Pruebas de edicion</p>
     </div>
 
     <!-- Container (Pricing Section) -->
     <div id="pricing" class="container-fluid">
         <div class="text-center">
             <h2>Eventos</h2>
-         <!--   <h4>Choose a payment plan that works for you</h4> -->
+            <!--   <h4>Choose a payment plan that works for you</h4> -->
         </div>
         <div class="row slideanim">
             @foreach ($eventos as $evento)
             <div class="col-sm-12 col-xs-12">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                       <!-- <h1>Basic</h1> -->
+                        <!-- <h1>Basic</h1> -->
                     </div>
                     <div class="panel-body">
                         <div class="col-sm-4">
@@ -295,13 +295,13 @@
                             <h3>{{ $evento ->name }}</h3>
                             {{ $evento ->detail }}
                             <div class="panel-footer">
-                            <h4>Detalles del evento</h4>
-                            {{ $evento ->fechainicial }}  - del -
-                            {{ $evento ->fechafinal }} -- 
-                            {{ $evento ->horainicial }} - de -
-                            {{ $evento ->horafinal }}
+                                <h4>Detalles del evento</h4>
+                                {{ $evento ->fechainicial }} - del -
+                                {{ $evento ->fechafinal }} --
+                                {{ $evento ->horainicial }} - de -
+                                {{ $evento ->horafinal }}
                             </div>
-                            <div class="panel-footer"   >
+                            <div class="panel-footer">
                                 <button class="btn btn-lg">PARTICIPA</button>
                             </div>
                         </div>

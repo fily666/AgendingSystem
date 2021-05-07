@@ -31,13 +31,13 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
+                <strong>Nombre:</strong>
                 <input type="text" name="name" value="{{ $usuario->name }}" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>E-Mail Address:</strong>
+                <strong>E-Mail:</strong>
                 <input type="text" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="email">
             </div>
         </div>
