@@ -15,7 +15,9 @@ class CreateCitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            /** el campo  hora  */
+            $table->string('hora')->comment('hora estima');/** agregar en el modelo */
+            $table->string('fecha')->comment('fecha estimada');/** agregar en el modelo */
+            $table->string('lugar')->comment('lugar estimada');/** agregar en el modelo */
             $table->timestamps();
         });
     }

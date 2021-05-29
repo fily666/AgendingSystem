@@ -15,9 +15,15 @@ class CreateEmpresasTable extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->comment('Razon social de la empresa');
-            $table->text('detail');
-            /** el capo nit  el capo telefono fijo , celular , correo,direccion,representante legal, no se encuentra en la migracion  */
+            $table->string('name')->comment('Razon social de la ');
+            $table->string('detail')->comment('detalles ');
+            $table->text('nit')->comment('idetificacion d'); /** agregar en el modelo */
+            $table->text('telefono')->comment('telefono corporativo');  /** agregar en el modelo */
+            $table->text('celular')->comment('numero de Celular'); /** agregar en el modelo */
+            $table->text('correo corporativo')->comment('correo de la empresa'); /** agregar en el modelo */
+            $table->text('direccion')->comment('direccion de la empresa'); /** agregar en el modelo */
+            $table->text('represetante')->comment('representate de la empresa'); /** agregar en el modelo */
+
             $table->timestamps();
         });
     }
