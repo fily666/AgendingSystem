@@ -269,7 +269,7 @@
     </nav>
 
     <div class="jumbotron text-center" style="color: #f4511e;">
-        <h1>Agending Sistem</h1>
+        <h1>Agending System</h1>
         <p>Pruebas de edicion</p>
     </div>
 
