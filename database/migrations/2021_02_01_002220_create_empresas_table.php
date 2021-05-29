@@ -15,8 +15,9 @@ class CreateEmpresasTable extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->comment('Razon social de la empresa');
             $table->text('detail');
+            /** el capo nit  el capo telefono fijo , celular , correo,direccion,representante legal, no se encuentra en la migracion  */
             $table->timestamps();
         });
     }
