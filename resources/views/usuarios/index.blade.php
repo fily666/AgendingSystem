@@ -15,6 +15,7 @@
     </div>
     @endif
 
+    <br>
 
     <table class="w3-table-all w3-card-4">
         <tr>
@@ -49,9 +50,7 @@
         @endforeach
 
     </table>
+    
+</div>
 
-
-
-
-
-    @endsection
+@endsection

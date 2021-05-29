@@ -1,53 +1,52 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Eventos</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('eventos.create') }}"> Crear nuevo evento</a>
-        </div>
+<div class="w3-container" id="contact">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Eventos.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+
+    <div class="pull-right">
+        <a class="btn btn-success" href="{{ route('eventos.create') }}"> Crear nuevo evento</a>
     </div>
+
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
+
+    <br>
+
+    <table class="w3-table-all w3-card-4">
+        <tr>
+            <th>No</th>
+            <th>Nombre</th>
+            <th>Detalle</th>
+            <th width="200px">Accion</th>
+        </tr>
+        @foreach ($eventos as $evento)
+        <tr>
+            <td>{{ ++$i }}</td>
+            <td>{{ $evento->name }}</td>
+            <td>{{ $evento->detail }}</td>
+            <td>
+                <form action="{{ route('eventos.destroy',$evento->id) }}" method="POST">
+
+                    <a class="btn btn-info" href="{{ route('eventos.show',$evento->id) }}"><i class="fas fa-search"></i></a>
+
+                    <a class="btn btn-primary" href="{{ route('eventos.edit',$evento->id) }}"><i class="fas fa-edit"></i></a>
+
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-eraser"></i></button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </table>
+    {!! $eventos->links() !!}
+
 </div>
-
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-    <p>{{ $message }}</p>
-</div>
-@endif
-
-
-<table class="table table-bordered">
-    <tr>
-        <th>No</th>
-        <th>Nombre</th>
-        <th>Detalle</th>
-        <th width="200px">Accion</th>
-    </tr>
-    @foreach ($eventos as $evento)
-    <tr>
-        <td>{{ ++$i }}</td>
-        <td>{{ $evento->name }}</td>
-        <td>{{ $evento->detail }}</td>
-        <td>
-            <form action="{{ route('eventos.destroy',$evento->id) }}" method="POST">
-
-                <a class="btn btn-info" href="{{ route('eventos.show',$evento->id) }}"><i class="fas fa-search"></i></a>
-
-                <a class="btn btn-primary" href="{{ route('eventos.edit',$evento->id) }}"><i class="fas fa-edit"></i></a>
-
-                @csrf
-                @method('DELETE')
-
-                <button type="submit" class="btn btn-danger"><i class="fas fa-eraser"></i></button>
-            </form>
-        </td>
-    </tr>
-    @endforeach
-</table>
-
-{!! $eventos->links() !!}
 
 @endsection
