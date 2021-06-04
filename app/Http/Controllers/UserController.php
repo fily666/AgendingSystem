@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -94,5 +95,23 @@ class UserController extends Controller
 
     return redirect()->route('usuarios.index')
       ->with('success', 'Product deleted successfully');
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function pruebar(Request $request)
+  {
+    User::create([
+      'name' => $request['name'],
+      'email' => $request['email'],
+      'password' => Hash::make($request['password']),
+    ]);
+
+    return redirect()->route('register')
+      ->with('success', 'Registro Exitoso!!, Ahora puede iniciar secion.');
   }
 }

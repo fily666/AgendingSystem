@@ -31,3 +31,5 @@ Route::resource('usuarios', 'UserController');
 
 Route::resource('empresas', 'EmpresaController');
 
+
+Route::post('/register2', 'UserController@pruebar')->name('guardaruser');
