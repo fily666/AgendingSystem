@@ -3,10 +3,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2> Show evento</h2>
+            <h2>Detalle de evento</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('eventos.index') }}"> Back</a>
+            <a class="btn btn-dark" href="{{ route('eventos.index') }}"> <i class="bi bi-box-arrow-left"></i> Home</a></a>
         </div>
     </div>
 </div>

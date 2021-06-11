@@ -6,7 +6,7 @@
     <hr style="width:50px;border:5px solid red" class="w3-round">
 
     <div class="pull-right">
-        <a class="btn btn-success" href="{{ route('eventos.create') }}"> Crear nuevo evento</a>
+        <a class="btn btn-dark" href="{{ route('eventos.create') }}"> Crear nuevo evento</a>
     </div>
 
     @if ($message = Session::get('success'))
@@ -32,14 +32,14 @@
             <td>
                 <form action="{{ route('eventos.destroy',$evento->id) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('eventos.show',$evento->id) }}"><i class="fas fa-search"></i></a>
+                    <a class="btn btn-info" href="{{ route('eventos.show',$evento->id) }}"><i class="bi bi-file-diff-fill"></i></a>
 
-                    <a class="btn btn-primary" href="{{ route('eventos.edit',$evento->id) }}"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-primary" href="{{ route('eventos.edit',$evento->id) }}"><i class="bi bi-pencil-fill"></i></a>
 
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger"><i class="fas fa-eraser"></i></button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminarlo?')"><i class="bi bi-eraser-fill"></i></button>
                 </form>
             </td>
         </tr>
