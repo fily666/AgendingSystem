@@ -7,7 +7,7 @@
             <h2>Editar evento</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('eventos.index') }}"> Home</a>
+            <a class="btn btn-dark" href="{{ route('eventos.index') }}"> <i class="bi bi-box-arrow-left"></i> Home</a></a>
         </div>
     </div>
 </div>
@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-dark">Actualizar</button>
         </div>
     </div>
 
