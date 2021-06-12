@@ -42,7 +42,7 @@ class UserController extends Controller
     User::create($request->all());
 
     return redirect()->route('usuarios.index')
-      ->with('success', 'Product created successfully.');
+      ->with('success', 'Usuario  creado con éxito.');
   }
 
   /**
@@ -80,7 +80,7 @@ class UserController extends Controller
     $usuario->update($request->all());
 
     return redirect()->route('usuarios.index')
-      ->with('success', 'Product updated successfully');
+      ->with('success', 'Usuario  Actualizado  con éxito');
   }
 
   /**
@@ -94,7 +94,7 @@ class UserController extends Controller
     $usuario->delete();
 
     return redirect()->route('usuarios.index')
-      ->with('success', 'Product deleted successfully');
+      ->with('success', 'Usuario  Eliminado  con éxito');
   }
 
   /**

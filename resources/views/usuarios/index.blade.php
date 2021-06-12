@@ -6,7 +6,7 @@
     <hr style="width:50px;border:5px solid red" class="w3-round">
 
     <div class="pull-right">
-        <a class="btn btn-success" href="{{ route('usuarios.create') }}"> Crear nuevo Usuario</a>
+        <a class="btn btn-dark" href="{{ route('usuarios.create') }}"> Crear nuevo Usuario</a>
     </div>
 
     @if ($message = Session::get('success'))
@@ -36,21 +36,21 @@
             <td>
                 <form action="{{ route('usuarios.destroy',$userr->id) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('usuarios.show',$userr->id) }}"><i class="fas fa-search"></i></a>
+                    <a class="btn btn-info" href="{{ route('usuarios.show',$userr->id) }}"><i class="bi bi-file-diff-fill"></i></a>
 
-                    <a class="btn btn-primary" href="{{ route('usuarios.edit',$userr->id) }}"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-primary" href="{{ route('usuarios.edit',$userr->id) }}"><i class="bi bi-pencil-fill"></i></a>
 
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger"><i class="fas fa-eraser"></i></button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que desea eliminar?')"><i class="bi bi-eraser-fill"></i></button>
                 </form>
             </td>
         </tr>
         @endforeach
 
     </table>
-    
+
 </div>
 
 @endsection

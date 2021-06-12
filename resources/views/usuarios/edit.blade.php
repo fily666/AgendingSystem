@@ -4,10 +4,11 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Editar evento</h2>
+            <h2>Editar Usuario</h2>
+
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('eventos.index') }}"> Home</a>
+            <a class="btn btn-dark" href="{{ route('usuarios.index') }}"> <i class="bi bi-box-arrow-left"></i> Home</a>
         </div>
     </div>
 </div>
@@ -32,29 +33,29 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nombre:</strong>
-                <input type="text" name="name" value="{{ $usuario->name }}" class="form-control" placeholder="Name">
+                <input type="text" name="name" value="{{ $usuario->name }}" class="form-control" placeholder="Name" required>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>E-Mail:</strong>
-                <input type="text" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="email">
+                <strong>Correo:</strong>
+                <input type="text" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="email"required>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Password:</strong>
+                <strong>Cotraseña:</strong>
                 <input type="password" name="password" value="{{ $usuario->password }}" class="form-control" placeholder="password">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Confirm Password:</strong>
+                <strong>Confimar Contraseña:</strong>
                 <input type="text" name="password_confirmation" value="{{ $usuario->password_confirmation }}" class="form-control" placeholder="password_confirmation">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <button type="submit" class="btn btn-dark   ">Actualizar</button>
         </div>
     </div>
 
