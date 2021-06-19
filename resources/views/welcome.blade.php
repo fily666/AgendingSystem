@@ -268,7 +268,7 @@
         </div>
     </nav>
 
-    <div class="jumbotron text-center" style="color: #f4511e;">
+    <div class="jumbotron text-center" style="color:#e2001d;">
         <h1>Agending System</h1>
         <p>Pruebas de edicion</p>
     </div>
@@ -276,7 +276,7 @@
     <!-- Container (Pricing Section) -->
     <div id="pricing" class="container-fluid">
         <div class="text-center">
-            <h2>Eventos</h2>
+            <h1 class="w3-text-orange" style="text-shadow:1px 1px 0 rgb(247, 142, 73)">Eventos</h1>
             <!--   <h4>Choose a payment plan that works for you</h4> -->
         </div>
         <div class="row slideanim">
@@ -310,6 +310,39 @@
             </div>
             @endforeach
             {!! $eventos->links() !!}
+        </div>
+    </div>
+
+    <div id="pricing" class="container-fluid">
+        <div class="text-center">
+            <h2>Nosotros</h2>
+            <!--   <h4>Choose a payment plan that works for you</h4> -->
+        </div>
+        <div class="row slideanim">
+            <div class="col-sm-12 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <!-- <h1>Basic</h1> -->
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6 text-Dark">
+                                <h1>Vision</h1>
+                                    <p>Es un mecanismo que permite el encuentro entre emprendedores, empresarios,
+                                        inversores e instituciones que buscan lograr acuerdos para abrir oportunidades
+                                        de compra o venta de servicios, productos o procesos.</p>
+                            </div>
+                            <div class="col-sm-6 text-Dark">
+                                <h1>Mision</h1>
+                                <p>Son espacios creados para facilitar el encuentro entre oferentes y demandantes que cumplen condiciones de calidad,
+                                precio, experiencia y ofrecen la posibilidad de un intercambio comercial en el corto y mediano plazo.
+                                </p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
