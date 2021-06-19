@@ -251,6 +251,7 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li><a href="#pricing">Eventos</a></li>
+                    <li><a href="#Nosotros">Nosotros</a></li>
 
                     @if (Route::has('login'))
                     @auth
@@ -276,7 +277,8 @@
     <!-- Container (Pricing Section) -->
     <div id="pricing" class="container-fluid">
         <div class="text-center">
-            <h1 class="w3-text-orange" style="text-shadow:1px 1px 0 rgb(247, 142, 73)">Eventos</h1>
+            <br>
+            <h2>Eventos</h2>
             <!--   <h4>Choose a payment plan that works for you</h4> -->
         </div>
         <div class="row slideanim">
@@ -313,36 +315,45 @@
         </div>
     </div>
 
-    <div id="pricing" class="container-fluid">
-        <div class="text-center">
-            <h2>Nosotros</h2>
-            <!--   <h4>Choose a payment plan that works for you</h4> -->
-        </div>
-        <div class="row slideanim">
-            <div class="col-sm-12 col-xs-12">
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <!-- <h1>Basic</h1> -->
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-sm-12">
-                            <div class="col-sm-6 text-Dark">
-                                <h1>Vision</h1>
-                                    <p>Es un mecanismo que permite el encuentro entre emprendedores, empresarios,
-                                        inversores e instituciones que buscan lograr acuerdos para abrir oportunidades
-                                        de compra o venta de servicios, productos o procesos.</p>
-                            </div>
-                            <div class="col-sm-6 text-Dark">
-                                <h1>Mision</h1>
-                                <p>Son espacios creados para facilitar el encuentro entre oferentes y demandantes que cumplen condiciones de calidad,
-                                precio, experiencia y ofrecen la posibilidad de un intercambio comercial en el corto y mediano plazo.
-                                </p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+    <!-- Container (Portfolio Section) -->
+    <div id="Nosotros" class="container-fluid text-center bg-grey">
+        <h2>Nosotros</h2>
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+
+                    <h4>"Vision"<br>
+                        <span>Es un mecanismo que permite el encuentro entre emprendedores, empresarios,<br>
+                            inversores e instituciones que buscan lograr acuerdos para abrir oportunidades <br>
+                            de compra o venta de servicios, productos o procesos.
+                        </span>
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>"Mision"<br>
+                        <span>Son espacios creados para facilitar el encuentro entre oferentes y demandantes <br>
+                            que cumplen condiciones de calidad, precio, experiencia y ofrecen la posibilidad de un <br>
+                            intercambio comercial en el corto y mediano plazo.
+                        </span>
+                    </h4>
                 </div>
             </div>
+            <br><br>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
 
