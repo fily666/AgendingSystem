@@ -6,7 +6,7 @@
     <hr style="width:50px;border:5px solid red" class="w3-round">
 
     <div class="pull-right">
-        <a class="btn btn-dark" href="{{ route('eventos.create') }}"> Crear nuevo evento</a>
+        <a class="btn btn-dark" name="eventos" href="{{ route('eventos.create') }}"> Crear nuevo evento</a>
     </div>
 
     @if ($message = Session::get('success'))

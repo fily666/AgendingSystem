@@ -54,13 +54,6 @@
     .w3-half img:hover {
         opacity: 1
     }
-
-    .prueba {
-        background-color: #f1f1f1;
-        margin-top: 50px;
-        width: 105%;
-        color: black;
-    }
 </style>
 
 <body>
@@ -74,42 +67,38 @@
         <div class="w3-bar-block">
             <a href="{{ url('/home') }}" class="w3-bar-item w3-button w3-hover-white">Home</a>
             <a href="{{ route('eventos.index') }}" class="w3-bar-item w3-button w3-hover-white">Eventos</a>
-           <!-- <a href="{{ route('empresas.index') }}" class="w3-bar-item w3-button w3-hover-white">Empresas</a> -->
-           <!-- <a href="#contact" class="w3-bar-item w3-button w3-hover-white">citas</a> -->
+            <!-- <a href="{{ route('empresas.index') }}" class="w3-bar-item w3-button w3-hover-white">Empresas</a> -->
+            <!-- <a href="#contact" class="w3-bar-item w3-button w3-hover-white">citas</a> -->
             <a href="{{ route('usuarios.index') }}" class="w3-bar-item w3-button w3-hover-white">Usuarios </a>
-
         </div>
-        <div class="prueba">
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-                @endif
-                @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
 
-                    <div class="" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+        <br><br>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-                @endguest
-            </ul>
+        <div class="w3-bar-block">
+            <!-- Authentication Links -->
+            @guest
+            <a class="w3-bar-item w3-button w3-hover-white" href="{{ route('login') }}">
+                {{ __('Login') }}
+            </a>
+            @if (Route::has('register'))
+            <a class="w3-bar-item w3-button w3-hover-white" href="{{ route('register') }}">
+                {{ __('Register') }}
+            </a>
+            @endif
+            @else
+            <br><br>
+            <div class="row" style="background-color: #f44336 ;">
+                <a class="w3-bar-item w3-button w3-hover-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+                <a class="w3-bar-item w3-button w3-hover-white" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    <i class="bi bi-toggle-off"></i> {{ __('Serrar secion') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+            @endguest
         </div>
     </nav>
 
