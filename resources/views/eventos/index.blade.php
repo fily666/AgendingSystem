@@ -39,7 +39,7 @@
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminarlo?')"><i class="bi bi-eraser-fill"></i></button>
+                    <button type="submit" name="delete_evento" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminarlo?')"><i class="bi bi-eraser-fill"></i></button>
                 </form>
             </td>
         </tr>

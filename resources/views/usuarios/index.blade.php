@@ -43,7 +43,7 @@
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que desea eliminar?')"><i class="bi bi-eraser-fill"></i></button>
+                    <button type="submit" name="delete_usuario" class="btn btn-danger" onclick="return confirm('¿Seguro que desea eliminar?')"><i class="bi bi-eraser-fill"></i></button>
                 </form>
             </td>
         </tr>
