@@ -39,23 +39,23 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Correo:</strong>
-                <input type="text" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="email"required>
+                <input type="text" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="email" required>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Cotraseña:</strong>
-                <input type="password" name="password" value="{{ $usuario->password }}" class="form-control" placeholder="password">
+                <input type="password" name="password" value="" class="form-control" placeholder="password" required>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Confimar Contraseña:</strong>
-                <input type="text" name="password_confirmation" value="{{ $usuario->password_confirmation }}" class="form-control" placeholder="password_confirmation">
+                <input type="text" name="password_confirmation" value="" class="form-control" placeholder="password_confirmation" required>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-dark   ">Actualizar</button>
+            <button type="submit" name="btn_actualizar" class="btn btn-dark">Actualizar</button>
         </div>
     </div>
 

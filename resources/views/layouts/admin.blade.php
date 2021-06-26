@@ -92,7 +92,7 @@
                     {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
                 <a class="w3-bar-item w3-button w3-hover-white" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    <i class="bi bi-toggle-off"></i> {{ __('Serrar secion') }}
+                    <i class="bi bi-toggle-off"></i> {{ __('Cerrar sesion') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf

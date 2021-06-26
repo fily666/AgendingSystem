@@ -36,9 +36,9 @@
             <td>
                 <form action="{{ route('usuarios.destroy',$userr->id) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('usuarios.show',$userr->id) }}"><i class="bi bi-file-diff-fill"></i></a>
+                    <a class="btn btn-info" name="ver_usuario" href="{{ route('usuarios.show',$userr->id) }}"><i class="bi bi-file-diff-fill"></i></a>
 
-                    <a class="btn btn-primary" href="{{ route('usuarios.edit',$userr->id) }}"><i class="bi bi-pencil-fill"></i></a>
+                    <a class="btn btn-primary" name="edit_usuario" href="{{ route('usuarios.edit',$userr->id) }}"><i class="bi bi-pencil-fill"></i></a>
 
                     @csrf
                     @method('DELETE')
