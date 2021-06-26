@@ -32,9 +32,9 @@
             <td>
                 <form action="{{ route('eventos.destroy',$evento->id) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('eventos.show',$evento->id) }}"><i class="bi bi-file-diff-fill"></i></a>
+                    <a class="btn btn-info" name="ver_evento" href="{{ route('eventos.show',$evento->id) }}"><i class="bi bi-file-diff-fill"></i></a>
 
-                    <a class="btn btn-primary" href="{{ route('eventos.edit',$evento->id) }}"><i class="bi bi-pencil-fill"></i></a>
+                    <a class="btn btn-primary" name="edit_evento" href="{{ route('eventos.edit',$evento->id) }}"><i class="bi bi-pencil-fill"></i></a>
 
                     @csrf
                     @method('DELETE')

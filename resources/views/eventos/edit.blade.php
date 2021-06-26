@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-dark">Actualizar</button>
+        <button type="submit" name="edit_Actualizar" class="btn btn-dark">Actualizar</button>
         </div>
     </div>
 
